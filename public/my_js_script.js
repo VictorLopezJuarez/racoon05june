@@ -1,10 +1,16 @@
-function typeWriter(element, text, delay = 20) { // Adjust delay to 20ms
+function typeWriter(element, text, delay = 20) {
     let i = 0;
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
             i++;
             setTimeout(type, delay);
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+            // Scroll the parent container
+            const chatContainer = document.querySelector('.chat-container'); // Update the selector to your chat container
+            if (chatContainer) {
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
         }
     }
     type();
@@ -17,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 mutation.addedNodes.forEach(function(node) {
                     if (node.nodeType === 1) {
                         const markdownBody = node.querySelector('.markdown-body p');
-                        if (markdownBody && node.querySelector('.MuiBox-root')) { // Ensure the node is part of the answer
+                        if (markdownBody && node.querySelector('.MuiBox-root')) {
                             const text = markdownBody.textContent;
                             markdownBody.textContent = "";  // Clear the existing text
                             typeWriter(markdownBody, text);  // Apply the typewriter effect
@@ -28,5 +34,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    observer.observe(document.body, { childList: true, subtree: true }); // Observe the entire body for changes
+    observer.observe(document.body, { childList: true, subtree: true });
 });
