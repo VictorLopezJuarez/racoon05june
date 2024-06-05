@@ -74,6 +74,5 @@ async def main(message: cl.Message):
     # Send the response back to the user
     await cl.Message(
         content=f"{result}",
-        #content=f"<div class='chatbot-message'>{result}</div>",
     ).send()
 
