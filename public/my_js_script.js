@@ -1,10 +1,11 @@
-function typeWriter(element, text, delay = 7) {
+function typeWriter(element, text, delay = 9) {
     let i = 0;
+    const chatContainer = document.getElementById('root');
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
             i++;
-            window.scrollTo(0, document.body.scrollHeight); // Auto-scroll down
+            element.scrollIntoView({ behavior: 'smooth', block: 'end' });
             setTimeout(type, delay);
         }
     }
