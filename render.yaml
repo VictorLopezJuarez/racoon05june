@@ -5,7 +5,7 @@ services:
     repo: https://github.com/VictorLopezJuarez/racoon05june
     region: frankfurt
     buildCommand: pip install -r requirements.txt
-    startCommand: chainlit run app.py -h --port $PORT
+    startCommand: chainlit run app.py -h --port 8000
     envVars:
       - key: OPENAI_API_KEY
         fromPath: .env
