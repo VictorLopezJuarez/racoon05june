@@ -1,26 +1,14 @@
-function typeWriter(element, text, delay = 9) {
+function typeWriter(element, text, delay = 7) {
     let i = 0;
-
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
             i++;
+            element.scrollIntoView({ behavior: 'smooth', block: 'end' }); // Auto-scroll down smoothly
             setTimeout(type, delay);
         }
     }
-
-    const scrollInterval = setInterval(() => {
-        element.scrollIntoView({ behavior: 'smooth', block: 'end' });
-    }, 50);  // Smaller interval for smoother scrolling
-
     type();
-
-    const checkCompletion = setInterval(() => {
-        if (i >= text.length) {
-            clearInterval(scrollInterval);
-            clearInterval(checkCompletion);
-        }
-    }, 100);  // Check for completion periodically
 }
 
 document.addEventListener("DOMContentLoaded", function() {
