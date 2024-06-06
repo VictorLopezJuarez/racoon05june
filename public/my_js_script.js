@@ -1,4 +1,4 @@
-function typeWriter(element, text, delay = 10) {
+function typeWriter(element, text, delay = 7) {
     let i = 0;
     function type() {
         if (i < text.length) {
