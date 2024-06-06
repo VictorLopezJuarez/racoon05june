@@ -76,3 +76,7 @@ async def main(message: cl.Message):
         content=f"{result}",
     ).send()
 
+# Run the app / added 6 June at 11h52
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Use the PORT environment variable
+    cl.run(host="0.0.0.0", port=port)         # Bind to 0.0.0.0 to accept all incoming connections
