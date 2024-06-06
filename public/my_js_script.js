@@ -4,7 +4,7 @@ function typeWriter(element, text, delay = 7) {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
             i++;
-            element.scrollIntoView({ behavior: 'smooth', block: 'end' }); // Auto-scroll down smoothly
+            element.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Auto-scroll down smoothly
             setTimeout(type, delay);
         }
     }
