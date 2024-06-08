@@ -1,9 +1,8 @@
-# Exported from Render on 2024-05-20T20:56:35Z
-#services:
-# - type: web
-#  name: Chatbot
-# runtime: python
-# region: frankfurt
-# buildCommand: pip install -r requirements.txt
-# startCommand: chainlit run app.py -h --port $PORT
-#version: "1"
+services:
+ - type: web
+  name: Chatbot
+ runtime: python
+ region: frankfurt
+ buildCommand: pip install -r requirements.txt
+ startCommand: chainlit run app.py -h --port $PORT
+version: "1"
