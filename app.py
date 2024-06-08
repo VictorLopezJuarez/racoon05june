@@ -1,4 +1,4 @@
-⁹import chainlit as cl
+import chainlit as cl
 from langchain_openai import OpenAI
 from dotenv import load_dotenv
 from langchain_community.vectorstores import FAISS
