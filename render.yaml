@@ -1,8 +1,6 @@
 services:
-  type: web
-  name: Chatbot
- runtime: python
- region: frankfurt
- buildCommand: pip install -r requirements.txt
- startCommand: chainlit run app.py -h --port $PORT
+  runtime: python
+  region: frankfurt
+  buildCommand: pip install -r requirements.txt
+  startCommand: chainlit run app.py -h --port $PORT
 version: "1"
