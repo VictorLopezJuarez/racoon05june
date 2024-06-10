@@ -1,8 +1,5 @@
 {
   "dependencies": {
     "react-scroll-to-bottom": "^4.2.0"
-  },
-  "scripts": {
-    "start": "chainlit run app.py --port $PORT --host 0.0.0.0"
   }
 }
