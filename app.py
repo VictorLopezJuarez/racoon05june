@@ -1,5 +1,5 @@
 import chainlit as cl
-from langchain_community.llms import OpenAI
+from langchain_openai import OpenAI
 from dotenv import load_dotenv
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import CSVLoader
