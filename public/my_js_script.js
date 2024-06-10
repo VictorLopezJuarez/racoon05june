@@ -1,4 +1,4 @@
-function typeWriter(element, text, delay = 20) {  //delay was in 7 (10june)
+function typeWriter(element, text, delay = 50) {  //delay was in 7 (10june)
     let i = 0;
     function type() {
         if (i < text.length) {
