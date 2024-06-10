@@ -69,7 +69,7 @@ async def main(message: cl.Message):
     response = chain.invoke({"query": message.content})
     
     # Extract the result from the response, cleaner responses
-    result = response['result'].replace('ANSWER:', '').replace('Answer:', '').replace('context', '').replace('?', '').strip()
+    result = response['result'].replace('ANSWER:', '').replace('answer:', '').replace('Answer:', '').replace('context', '').replace('?', '').strip()
 
     # Send the response back to the user
     await cl.Message(
